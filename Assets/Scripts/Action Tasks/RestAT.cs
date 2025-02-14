@@ -1,17 +1,15 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using System.Collections;
 using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class Rest : ActionTask {
+	public class RestAT : ActionTask {
 
-		public AudioClip snoring;
-		
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
+		public BBParameter<float> eggProgress;
+		public float gestationRate;
+
 		protected override string OnInit() {
 			return null;
 		}
@@ -20,14 +18,16 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			
-            //EndAction(true);
-        }
+			//EndAction(true);
+		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            Play();
-        }
+			//increase egg progress
+			eggProgress.value += gestationRate * Time.deltaTime;
+
+			//do rest signifiers
+		}
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
@@ -38,15 +38,5 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnPause() {
 			
 		}
-
-		IEnumerator Play()
-		{
-            AudioSource audio = agent.GetComponent<AudioSource>();
-
-            audio.Play();
-            yield return new WaitForSeconds(audio.clip.length);
-            audio.clip = snoring;
-            audio.Play();
-        }
 	}
 }
