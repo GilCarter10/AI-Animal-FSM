@@ -2409,14 +2409,15 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{"time":{"_name":"time","_id":"8f33daf6-637a-49fd-8ce8-1b50e4ec1f37","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"eggProgress":{"_name":"eggProgress","_id":"80f18da2-1bab-466e-90e8-126338719628","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"swimSpeed":{"_value":5.0,"_name":"swimSpeed","_id":"24f736ae-c8be-460e-9fc0-9029184be8fc","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Nest":{"_name":"Nest","_id":"0e804b60-3fec-4639-90a2-1ab1bc1e1188","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"sun":{"_value":1,"_name":"sun","_id":"f38739f5-111a-47f5-8fe4-dc49d967ac23","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Light,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"seaweedManager":{"_value":2,"_name":"seaweedManager","_id":"a7204b3c-a9cd-4cb8-a579-909a71a2318e","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Nest":{"_value":1,"_name":"Nest","_id":"0e804b60-3fec-4639-90a2-1ab1bc1e1188","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"sun":{"_value":2,"_name":"sun","_id":"f38739f5-111a-47f5-8fe4-dc49d967ac23","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Light,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"seaweedManager":{"_value":3,"_name":"seaweedManager","_id":"a7204b3c-a9cd-4cb8-a579-909a71a2318e","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"seaweedFound":{"_name":"seaweedFound","_id":"5dc703f8-2628-4320-af18-a68a6a02ea40","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"currentSeaweed":{"_name":"currentSeaweed","_id":"e6d62949-54e9-412a-8fcb-8d74be5e9a4b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
+  - {fileID: 962920109}
   - {fileID: 705507994}
   - {fileID: 1415063315}
   _serializedVariables:
@@ -2429,9 +2430,11 @@ MonoBehaviour:
   - _json: '{"_value":5.0,"_name":"swimSpeed","_id":"24f736ae-c8be-460e-9fc0-9029184be8fc","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_name":"Nest","_id":"0e804b60-3fec-4639-90a2-1ab1bc1e1188","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+  - _json: '{"_value":1,"_name":"Nest","_id":"0e804b60-3fec-4639-90a2-1ab1bc1e1188","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references: []
+    _references:
+    - {fileID: 0}
+    - {fileID: 962920109}
   - _json: '{"_value":1,"_name":"sun","_id":"f38739f5-111a-47f5-8fe4-dc49d967ac23","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Light,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
@@ -2928,7 +2931,7 @@ Transform:
   m_GameObject: {fileID: 8359967898948816297}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.099, y: 0, z: 0}
+  m_LocalPosition: {x: -15.8, y: 0, z: -6.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -19,6 +19,9 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<bool> seaweedFound;
 		public BBParameter<GameObject> currentSeaweed;
 
+		public float searchTime;
+		private float searchTimer;
+
         protected override string OnInit() {
 			animator = agent.GetComponent<Animator>();
 			return null;
@@ -29,6 +32,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			animator.SetBool("Searching", true);
+			searchTimer = 0;
 
 			for (int i = 0; i < seaweedManager.value.spawnedSeaweed.Count; i++)
 			{
@@ -44,7 +48,12 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-
+			searchTimer += Time.deltaTime;
+			if (searchTimer >= searchTime)
+			{
+				EndAction(true);
+			}
+			Debug.Log("searching");
 		}
 
 		//Called when the task is disabled.

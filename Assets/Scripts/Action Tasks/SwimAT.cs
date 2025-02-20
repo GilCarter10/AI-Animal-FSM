@@ -63,9 +63,11 @@ namespace NodeCanvas.Tasks.Actions {
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
             //when arrived, end task
-            if (navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            
+            if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
                 EndAction(true);
+                Debug.Log("ended");
             }
         }
 
@@ -76,7 +78,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called when the task is paused.
 		protected override void OnPause() {
-			
-		}
+            animator.SetBool("Swimming", false);
+        }
 	}
 }

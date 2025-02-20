@@ -1,3 +1,4 @@
+using NodeCanvas.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,17 @@ public class SeaweedManager : MonoBehaviour
             spawnLocation.y = 0;
             GameObject newSeaweed = Instantiate(seaweedPrefab, spawnLocation, transform.rotation);
             spawnedSeaweed.Add(newSeaweed);
+        }
 
+        for (int i = 0; i < spawnedSeaweed.Count; i++)
+        {
+            Blackboard seaweedBlackboard = spawnedSeaweed[i].GetComponent<Blackboard>();
+            if (seaweedBlackboard.GetVariableValue<bool>("eaten"))
+            {
+                Destroy(spawnedSeaweed[i]);
+            }
 
         }
     }
-
     
 }
