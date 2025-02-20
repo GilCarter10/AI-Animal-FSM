@@ -23,7 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 		private float searchTimer;
 
         protected override string OnInit() {
-			animator = agent.GetComponent<Animator>();
+			animator = agent.GetComponentInChildren<Animator>();
 			return null;
 		}
 

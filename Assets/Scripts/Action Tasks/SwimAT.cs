@@ -23,7 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<GameObject> currentSeaweed;
 
 		protected override string OnInit() {
-			animator = agent.GetComponent<Animator>();
+			animator = agent.GetComponentInChildren<Animator>();
 			navAgent = agent.GetComponent<NavMeshAgent>();
 			return null;
 		}
