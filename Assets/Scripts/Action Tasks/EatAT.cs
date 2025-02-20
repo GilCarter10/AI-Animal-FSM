@@ -22,7 +22,6 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			animator.SetBool("Eating", true);
-			SeaweedManager.spawned = false;
 		}
 
 		//Called once per frame while the action is active.

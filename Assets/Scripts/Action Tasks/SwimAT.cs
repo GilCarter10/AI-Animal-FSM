@@ -19,6 +19,9 @@ namespace NodeCanvas.Tasks.Actions {
         private NavMeshAgent navAgent;
         private Animator animator;
 
+        public BBParameter<bool> seaweedFound;
+        public BBParameter<GameObject> currentSeaweed;
+
 		protected override string OnInit() {
 			animator = agent.GetComponent<Animator>();
 			navAgent = agent.GetComponent<NavMeshAgent>();
@@ -50,6 +53,10 @@ namespace NodeCanvas.Tasks.Actions {
                     return;
                 }
                 navAgent.SetDestination(navHit.position);
+            }
+            if (seaweedFound.value)
+            {
+                target = currentSeaweed.value.transform;
             }
         }
 

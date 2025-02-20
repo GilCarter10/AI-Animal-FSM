@@ -1,5 +1,6 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,8 +13,11 @@ namespace NodeCanvas.Tasks.Actions {
         private Animator animator;
 
         public float searchRadius;
-		public BBParameter<Transform> seaweed;
-		public static bool seaweedFound = false;
+
+
+		public BBParameter<SeaweedManager> seaweedManager;
+		public BBParameter<bool> seaweedFound;
+		public BBParameter<GameObject> currentSeaweed;
 
         protected override string OnInit() {
 			animator = agent.GetComponent<Animator>();
@@ -25,12 +29,17 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			animator.SetBool("Searching", true);
-			
-			Vector3 toSeaweed = seaweed.value.position - agent.transform.position;
-			if (toSeaweed.magnitude < searchRadius)
+
+			for (int i = 0; i < seaweedManager.value.spawnedSeaweed.Count; i++)
 			{
-				seaweedFound = true;
-			}
+				Vector3 toSeaweed = agent.transform.position - seaweedManager.value.spawnedSeaweed[i].transform.position;
+                if (toSeaweed.magnitude < searchRadius)
+                {
+                    seaweedFound.value = true;
+					currentSeaweed.value = seaweedManager.value.spawnedSeaweed[i]; //set found seaweed to the current one in the for loop
+                }
+            }
+
 		}
 
 		//Called once per frame while the action is active.

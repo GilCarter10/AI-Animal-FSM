@@ -7,6 +7,8 @@ namespace NodeCanvas.Tasks.Conditions {
 
 	public class SeaweedFoundCT : ConditionTask {
 
+		public BBParameter<bool> seaweedFound;
+
 		protected override string OnInit(){
 			return null;
 		}
@@ -24,7 +26,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-			return SearchAT.seaweedFound;
+			return seaweedFound.value;
 		}
 	}
 }

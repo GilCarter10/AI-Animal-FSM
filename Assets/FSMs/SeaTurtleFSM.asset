@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
-  m_Name: FSM
+  m_Name: SeaTurtleFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":188.1505,"y":363.2787},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_nestedFSM":{"_value":2},"_position":{"x":368.3516,"y":510.238},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_conditionList":{"conditions":[]},"_actionList":{"executionMode":1,"actions":[{"time":{"_name":"time","_targetVariableID":"ef076987-d7e5-4642-904a-c71aba59f558"},"sun":{"_name":"sun","_targetVariableID":"b84fb017-d49e-44f1-8983-e888a9195a82"},"$type":"NodeCanvas.Tasks.Actions.TimeAT"}]},"_position":{"x":482.9156,"y":332.0157},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"}],"connections":[{"_condition":{"timeToCheckFor":1,"time":{"_name":"time","_targetVariableID":"ef076987-d7e5-4642-904a-c71aba59f558"},"$type":"NodeCanvas.Tasks.Conditions.TimeOfDayCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"time":{"_name":"time","_targetVariableID":"ef076987-d7e5-4642-904a-c71aba59f558"},"$type":"NodeCanvas.Tasks.Conditions.TimeOfDayCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":194.1505,"y":357.2787},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_nestedFSM":{"_value":2},"_position":{"x":368.3516,"y":510.238},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_conditionList":{"conditions":[]},"_actionList":{"executionMode":1,"actions":[{"time":{"_name":"time","_targetVariableID":"8f33daf6-637a-49fd-8ce8-1b50e4ec1f37"},"sun":{"_name":"sun","_targetVariableID":"f38739f5-111a-47f5-8fe4-dc49d967ac23"},"$type":"NodeCanvas.Tasks.Actions.TimeAT"}]},"_position":{"x":482.9156,"y":332.0157},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"}],"connections":[{"_condition":{"timeToCheckFor":1,"time":{"_name":"time","_targetVariableID":"8f33daf6-637a-49fd-8ce8-1b50e4ec1f37"},"$type":"NodeCanvas.Tasks.Conditions.TimeOfDayCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"time":{"_name":"time","_targetVariableID":"8f33daf6-637a-49fd-8ce8-1b50e4ec1f37"},"$type":"NodeCanvas.Tasks.Conditions.TimeOfDayCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _objectReferences:
   - {fileID: 0}
-  - {fileID: 11400000, guid: a1f7f1dd5732d4b4c868f1ff4b4a2cd2, type: 2}
+  - {fileID: 11400000, guid: 7c82de71e2055534f983c6cfd62e8596, type: 2}
   - {fileID: 11400000, guid: a1bd57e8026569b4090cfc90a592f5de, type: 2}
   _graphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 93, y: -160}
+    _translation: {x: 162, y: -153}
     _zoomFactor: 1
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
