@@ -23,10 +23,9 @@ namespace NodeCanvas.Tasks.Conditions {
 			
 		}
 
-		//Called once per frame while the condition is active.
-		//Return whether the condition is success or failure.
+
 		protected override bool OnCheck() {
-			return variable.value >= minimumValue;
+			return variable.value >= minimumValue; //to check if a variable has reached a minimum value
 		}
 	}
 }

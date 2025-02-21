@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: LayEggsFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.CrawlAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"CrawlTo_Beach","_position":{"x":278.0,"y":301.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.LayEggsAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"LayEggs","_position":{"x":439.0,"y":369.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.CrawlAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"CrawlTo_Nest","_position":{"x":547.0,"y":275.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"speed":{"_name":"crawlSpeed","_targetVariableID":"1694bf86-cc34-4441-9011-3051e13c2c0f"},"target":{"_name":"beach","_targetVariableID":"04f41d1c-537d-4ea2-969e-2c2dcb87bae2"},"$type":"NodeCanvas.Tasks.Actions.CrawlAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"CrawlTo_Beach","_position":{"x":278.0,"y":301.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"eggTime":3.0,"spawnEgg":{"_name":"spawnEgg","_targetVariableID":"3cee1a22-7928-4020-b3f2-36c293496e91"},"eggProgress":{"_name":"eggProgress","_targetVariableID":"80f18da2-1bab-466e-90e8-126338719628"},"$type":"NodeCanvas.Tasks.Actions.LayEggsAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"LayEggs","_position":{"x":439.0,"y":370.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _objectReferences: []
   _graphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -25, y: -19}
+    _translation: {x: 14, y: -52}
     _zoomFactor: 1
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}

@@ -10,7 +10,10 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<float> eggProgress;
 		public float gestationRate;
 
-		protected override string OnInit() {
+		public BBParameter<GameObject> eyes;
+
+        public BBParameter<GameObject> particleSys;
+        protected override string OnInit() {
 			return null;
 		}
 
@@ -18,21 +21,23 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			//EndAction(true);
-		}
+			//close eyes and start particle sys
+			eyes.value.SetActive(false);
+            particleSys.value.SetActive(true);
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 			//increase egg progress
 			eggProgress.value += gestationRate * Time.deltaTime;
 
-			//do rest signifiers
 		}
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
-			
-		}
+            eyes.value.SetActive(true);
+            particleSys.value.SetActive(false);
+        }
 
 		//Called when the task is paused.
 		protected override void OnPause() {

@@ -34,6 +34,7 @@ public class SeaweedManager : MonoBehaviour
             if (seaweedBlackboard.GetVariableValue<bool>("eaten"))
             {
                 Destroy(spawnedSeaweed[i]);
+                spawnedSeaweed.Remove(spawnedSeaweed[i]);
             }
 
         }

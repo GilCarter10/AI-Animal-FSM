@@ -9,11 +9,12 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class SwimAT : ActionTask {
 
-		public enum SwimDirection { Targeted, Explore}
+		//enum for the different types of swimming
+        public enum SwimDirection { Targeted, Explore}
 		public SwimDirection swimDirection;
 
-        public BBParameter<float> speed;
-        public float patrolRadius;
+        public BBParameter<float> speed; //swim speed
+        public float patrolRadius; //the max radius the turtle would be able to patrol to
 		public BBParameter<Transform> target; //the target the turtle will swim to IF its swim direction is targeted
 
         private NavMeshAgent navAgent;
@@ -34,8 +35,14 @@ namespace NodeCanvas.Tasks.Actions {
         protected override void OnExecute()
         {
             animator.SetBool("Swimming", true);
-            //navAgent.speed = speed.value;
+            navAgent.speed = speed.value;
 
+            if (seaweedFound.value)
+            {
+                //if the turtle has found a seaweed, override and make that the swim target
+                target = currentSeaweed.value.transform;
+            }
+ 
             if (swimDirection == SwimDirection.Targeted)
             {
                 //swim to target
@@ -45,7 +52,8 @@ namespace NodeCanvas.Tasks.Actions {
             else if (swimDirection == SwimDirection.Explore)
             {
                 //patrol movement
-                Vector3 randomPoint = Random.insideUnitSphere * patrolRadius + agent.transform.position;
+                Vector3 randomPointDirection = Random.insideUnitSphere * patrolRadius;
+                Vector3 randomPoint = randomPointDirection.normalized * patrolRadius + agent.transform.position;
 
                 NavMeshHit navHit;
                 if (!NavMesh.SamplePosition(randomPoint, out navHit, patrolRadius, NavMesh.AllAreas))
@@ -54,20 +62,14 @@ namespace NodeCanvas.Tasks.Actions {
                 }
                 navAgent.SetDestination(navHit.position);
             }
-            if (seaweedFound.value)
-            {
-                target = currentSeaweed.value.transform;
-            }
         }
 
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
             //when arrived, end task
-            
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
                 EndAction(true);
-                Debug.Log("ended");
             }
         }
 

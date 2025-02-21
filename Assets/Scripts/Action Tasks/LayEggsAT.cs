@@ -1,37 +1,55 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEditor.Search;
+using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
 	public class LayEggsAT : ActionTask {
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit() {
-			return null;
+        private Animator animator;
+
+        public float eggTime;
+        private float eggTimer;
+
+        public BBParameter<bool> spawnEgg;
+        public BBParameter<float> eggProgress;
+
+        protected override string OnInit() {
+            //get components
+            animator = agent.GetComponentInChildren<Animator>();
+            return null;
 		}
 
-		//This is called once each time the task is enabled.
-		//Call EndAction() to mark the action as finished, either in success or failure.
-		//EndAction can be called from anywhere.
+
 		protected override void OnExecute() {
-			EndAction(true);
-		}
+            animator.SetBool("LayEggs", true); //start lay eggs animation
+            spawnEgg.value = true; //triggers in the egg manager script to spawn the eggs
+
+            eggTimer = 0f;
+            //EndAction(true);
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			
-		}
+            eggTimer += Time.deltaTime;
+            if (eggTimer >= eggTime)
+            {
+                //once the laying egg timer has completed, reset egg progress and end the action
+                eggProgress.value = 0;
+                EndAction(true);
+            }
+        }
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
-			
-		}
+            animator.SetBool("LayEggs", false);
+        }
 
 		//Called when the task is paused.
 		protected override void OnPause() {
-			
-		}
+            animator.SetBool("LayEggs", false);
+        }
 	}
 }

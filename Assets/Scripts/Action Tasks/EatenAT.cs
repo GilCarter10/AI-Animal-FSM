@@ -22,7 +22,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			agent.gameObject.SetActive(false);
+			agent.gameObject.SetActive(false); //set the seaweed gameobject to not active
 		}
 
 		//Called when the task is disabled.

@@ -11,7 +11,9 @@ namespace NodeCanvas.Tasks.Conditions {
 
 		public BBParameter<float> time;
 
-		protected override string OnInit(){
+        public BBParameter<float> dayNightLength;
+
+        protected override string OnInit(){
 			return null;
 		}
 
@@ -28,11 +30,11 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-			if (time.value < 15)
+			if (time.value < dayNightLength.value) //if its daytime and it needs to be daytime, return true
 			{
 				//daytime
 				if (timeToCheckFor == timeOfDay.Daytime) return true;
-			} else if (time.value >= 15)
+			} else if (time.value >= dayNightLength.value) //if its nightime and it needs to be nighttime, return true
 			{
 				//nighttime
 				if (timeToCheckFor == timeOfDay.Nighttime) return true;

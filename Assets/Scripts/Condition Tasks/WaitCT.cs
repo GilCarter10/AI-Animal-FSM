@@ -29,7 +29,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 			timer += Time.deltaTime;
-            return timer >= seconds;
+            return timer >= seconds; //wait seconds
 		}
 	}
 }
